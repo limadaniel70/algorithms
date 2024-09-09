@@ -17,7 +17,7 @@ def divisors_pairs(divisores: list[int]) -> list[tuple[int, int]]:
 
 
 def is_divisible_by(num: int, divisors: list[int]) -> bool:
-    return true if num in divisors else false
+    return True if num in divisors else False
 
 
 if __name__ == "__main__":
