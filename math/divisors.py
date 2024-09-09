@@ -1,3 +1,6 @@
+from math import sqrt
+
+
 def num_div(num: int) -> list[int]:
     divisores: list[int] = []
     for i in range(1, num + 1):
@@ -15,6 +18,13 @@ def divisors_pairs(divisores: list[int]) -> list[tuple[int, int]]:
         j -= 1
     return pares
 
+def divisors(num: int) -> list[tuple[int, int]]:
+    divisores: list[int] = []
+    for i in range(1, int(sqrt(num) + 1)):
+        if num % i == 0:
+            divisores.append(i)
+    
+    return [(x, int(num / x)) for x in divisores]
 
 def is_divisible_by(num: int, divisors: list[int]) -> bool:
     return True if num in divisors else False
@@ -22,9 +32,7 @@ def is_divisible_by(num: int, divisors: list[int]) -> bool:
 
 if __name__ == "__main__":
     num = int(input())
+    print(divisors(num))
     div = num_div(num)
-    # print(div[0], div[len(div)-1])
     pares = divisors_pairs(div)
-    print(
-        f"""\nQuantidade de divisores: {len(div)}\nDivisores: {div}\nQuantidade de pares: {len(pares)}\nPares: {pares}"""
-    )
+    print(pares)
