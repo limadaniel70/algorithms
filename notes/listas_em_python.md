@@ -172,7 +172,7 @@ Estes são alguns métodos para remover itens em uma lista:
 > ```
 
 > [!WARNING]
-> Nos métodos em que é possível passar um índice ou um item, caso este índice ou item não exista um erro será gerado. Exemplo: 
+> Nos métodos em que é possível passar um índice ou um item, caso este índice ou item não exista, um erro será gerado. Exemplo: 
 >
 > ```python
 >>>> frutas: list[str] = ["morango", "goiaba", "uva", "abacaxi", "caju"]
