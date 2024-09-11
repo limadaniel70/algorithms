@@ -1,3 +1,14 @@
+# LISTAS EM PYTHON
+
+## SUMÁRIO
+
+1. [Introdução](#introdução)
+2. [Acessando itens](#acessando-os-itens-de-uma-lista)
+3. [Manipulando listas](#manipulando-listas)
+	1. [Atualizando itens](#atualizando-valor)
+	2. [Inserindo itens](#inserindo-itens)
+	3. [Removendo itens](#removendo-itens)
+
 ## INTRODUÇÃO
 
 As listas são uma coleção de items. Enquanto uma variável pode ter um único valor uma lista pode suportar vários. Ex.:
@@ -22,7 +33,7 @@ tabela_verdade: list[bool] = [True, False, True, False]
 
 ## ACESSANDO OS ITENS DE UMA LISTA
 
-Para acessar os itens de uma lista precisamos dizer qual a sua posição. 
+Para acessar os itens de uma lista precisamos dizer qual a sua posição.
 
 ```python
 >>> nomes: list[str] = ["Daniel", "Samuel", "Antonino"]
@@ -35,11 +46,12 @@ Antonino
 ```
 
 > [!NOTE]
->  Perceba que a posição do primeiro item não é 1, mas sim 0.
+> Perceba que a posição do primeiro item não é 1, mas sim 0.
 
 > [!TIP]
 > Outro ponto importante é que se o número do índice for negativo ele começara pelo final da lista:
-> ```python
+>
+>```python
 >>>> nomes: list[str] = ["Daniel", "Samuel", "Antonino"]
 >>>> print(nomes[-1])
 >Antonino
@@ -53,9 +65,9 @@ Além disso, também é possível acessar um intervalo de itens de uma lista. Ex
 
 ```python
 >>> frutas: list[str] = ["banana", "morango", "uva", "goiaba", "caju", "abacaxi"]
->>> print(frutas[2:4])
+>>> frutas[2:4]
 ['uva', 'goiaba']
->>> print(frutas[1:5])
+>>> frutas[1:5]
 ['morango', 'uva', 'goiaba', 'caju']
 ```
 
@@ -63,13 +75,14 @@ O exemplo anterior escreve na tela os itens que começam no índice 1 (segunda p
 
 > [!TIP]
 > Também é possível fazer isso usando índices negativos:
-> 
+>
 > ```python
 >>> frutas: list[str] = ["banana", "morango", "uva", "goiaba", "caju", "abacaxi"]
->>> print(frutas[-4:-1])
+>>> frutas[-4:-1]
 >['uva', 'goiaba', 'caju']
-> ```
- Perceba que ela começa pelo índice 4 (quinta posição) e para antes do índice 1 (segunda posição). 
+>```
+>
+> Perceba que ela começa pelo índice 4 (quinta posição) e para antes do índice 1 (segunda posição).
 
 Além disso, é possível verificar se uma lista possuí determinado item:
 
@@ -91,9 +104,9 @@ else:
 Tem banana!
 ```
 
-## MANIPULANDO LISTA
+## MANIPULANDO LISTAS
 
-Como fazer para atualizar um valor em uma lista? Exemplo:
+### Atualizando valor:
 
 ```python
 >>> nomes: list[str] = ["Daniel", "Samuel", "Antonino"]
@@ -125,7 +138,7 @@ Estes são alguns métodos para inserir novos itens em uma lista:
 >>> outros_nome: list[str] = ["Marcel", "Aldair", "Leonardo"]
 >>> # Adiciona os itens de outra lista no final
 >>> nomes.extend(outros_nomes)
->>> print(nomes)
+>>> nomes
 ["Daniel", "Clara", "Samuel", "Antonino", "Diego", "Marcel", "Aldair", "Leonardo"]
 ```
 
@@ -137,15 +150,15 @@ Estes são alguns métodos para remover itens em uma lista:
 >>> frutas: list[str] = ["morango", "goiaba", "uva", "abacaxi", "caju"]
 >>> # Remove um item de acordo com seu valor
 >>> frutas.remove("morango")
->>> print(frutas)
+>>> frutas
 ["goiaba", "uva", "abacaxi", "caju"]
 >>> # Remove o ultimo item
 >>> frutas.pop()
->>> print(frutas)
+>>> frutas
 ["goiaba", "uva", "abacaxi"]
 >>> # Remove todo os itens da lista
 >>> frutas.clear()
->>> print(frutas)
+>>> frutas
 []
 ```
 
@@ -154,12 +167,13 @@ Estes são alguns métodos para remover itens em uma lista:
 > ```python
 > >>> frutas: list[str] = ["morango", "goiaba", "uva", "abacaxi", "caju"]
 > >>> frutas.pop(1)
-> >>> print(frutas)
+> >>> frutas
 > ["morango", "uva", "abacaxi", "caju"]
 > ```
 
 > [!WARNING]
 > Nos métodos em que é possível passar um índice ou um item, caso este índice ou item não exista um erro será gerado. Exemplo: 
+>
 > ```python
 >>>> frutas: list[str] = ["morango", "goiaba", "uva", "abacaxi", "caju"]
 >>>> frutas.pop(8)
@@ -167,5 +181,31 @@ Estes são alguns métodos para remover itens em uma lista:
 >  File "<stdin>", line 1, in <module>
 >  IndexError: pop index out of range
 >```  
-  
-  
+
+### Outros métodos
+
+```python
+>>> frutas: list[str] = ["laranja", "kiwi", "banana", "pera", "kiwi", "abacaxi", "kiwi"]
+>>> # Conta quantas vezes um elemento apareceu
+>>> frutas.count("kiwi")
+3
+>>> frutas.count("tangerina")
+0
+>>> frutas.count("abacaxi")
+1
+>>> # Encontra qual o índice de um item
+>>> frutas.index("kiwi")
+1
+>>> # Encontra o índice de um item a partir de
+>>> # determinada posição
+>>> frutas.index("kiwi", 2)
+4
+>>> # Inverte a ordem dos itens
+>>> frutas.reverse()
+>>> frutas
+['kiwi', 'abacaxi', 'kiwi', 'pera', 'banana', 'kiwi', 'laranja']
+>>> # Organiza a lista
+>>> frutas.sort()
+>>> frutas
+['abacaxi', 'banana', 'kiwi', 'kiwi', 'kiwi', 'laranja', 'pera']
+```
