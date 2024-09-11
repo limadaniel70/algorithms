@@ -42,11 +42,11 @@ Antonino
 > ```python
 >>>> nomes: list[str] = ["Daniel", "Samuel", "Antonino"]
 >>>> print(nomes[-1])
-Antonino
+>Antonino
 >>>> print(nomes[-2])
-Samuel
+>Samuel
 >>>> print(nomes[-3])
-Daniel
+>Daniel
 > ```
 
 Além disso, também é possível acessar um intervalo de itens de uma lista. Exemplo:
@@ -67,7 +67,7 @@ O exemplo anterior escreve na tela os itens que começam no índice 1 (segunda p
 > ```python
 >>> frutas: list[str] = ["banana", "morango", "uva", "goiaba", "caju", "abacaxi"]
 >>> print(frutas[-4:-1])
-['uva', 'goiaba', 'caju']
+>['uva', 'goiaba', 'caju']
 > ```
  Perceba que ela começa pelo índice 4 (quinta posição) e para antes do índice 1 (segunda posição). 
 
@@ -163,8 +163,9 @@ Estes são alguns métodos para remover itens em uma lista:
 > ```python
 >>>> frutas: list[str] = ["morango", "goiaba", "uva", "abacaxi", "caju"]
 >>>> frutas.pop(8)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in module  IndexError: pop index out of range
-  
+>Traceback (most recent call last):
+>  File "<stdin>", line 1, in <module>
+>  IndexError: pop index out of range
+>```  
   
   
