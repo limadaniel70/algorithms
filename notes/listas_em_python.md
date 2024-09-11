@@ -82,7 +82,7 @@ O exemplo anterior escreve na tela os itens que começam no índice 1 (segunda p
 >['uva', 'goiaba', 'caju']
 >```
 >
-> Perceba que ela começa pelo índice 4 (quinta posição) e para antes do índice 1 (segunda posição).
+> Perceba que ela começa pelo índice 2 (terceira posição), da esquerda para a direita, e para antes do índice 5 (sexta posição).
 
 Além disso, é possível verificar se uma lista possuí determinado item:
 
