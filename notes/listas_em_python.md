@@ -77,8 +77,8 @@ O exemplo anterior escreve na tela os itens que começam no índice 1 (segunda p
 > Também é possível fazer isso usando índices negativos:
 >
 > ```python
->>> frutas: list[str] = ["banana", "morango", "uva", "goiaba", "caju", "abacaxi"]
->>> frutas[-4:-1]
+>>>> frutas: list[str] = ["banana", "morango", "uva", "goiaba", "caju", "abacaxi"]
+>>>> frutas[-4:-1]
 >['uva', 'goiaba', 'caju']
 >```
 >
