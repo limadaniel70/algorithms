@@ -15,7 +15,7 @@ B = [[500, 200, 500, 150, 4],
 def product(a: list[list[int]], b: list[list[int]]) -> list[list[int]]:
     c = [[0 for _ in range(len(b[0]))] for _ in range(len(a))]
     aux = 0
-    # (c)ij = (a)ik * (b)kj for k in N 
+    # (c)ij = sum((a)ik * (b)kj) for k in N 
     for i, linha in enumerate(c):
         for j, coluna in enumerate(linha):
             aux = 0
