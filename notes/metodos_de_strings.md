@@ -23,10 +23,17 @@ name.lower()
 > Exemplo, se quisessemos colocar o texto de uma string para letras minúsculas seria necessário fazer isto:
 >
 >```python
->name = "DANIEL"
->name = name.casefold()
-># name agora é igual a 'daniel' 
->```
+> # Exemplo: se fosse ncessário colocar a variável name
+> # para minúsculo:
+> name = "DANIEL"
+> name = name.casefold()
+> # A forma anterior é a forma correta se quisermos atualizar o valor de name.
+> # A forma a seguir está incorreta:
+> name = "DANIEL"
+> name.casefold()
+> # O método casefold retorna um valor que não é 
+> # associado a nenhuma variável.
+> ```
 
 ## capitalize
 
@@ -157,7 +164,6 @@ Formata uma string inserindo valores em `placeholders` (marcadores de posição)
 Cada um desses métodos verifica se todos os caracteres da string são alfanuméricos (letras e números), se todos os caracteres da string são letras e se todos os caracteres da string são dígitos, respectivamente:
 
 ```python
-Copiar código
 >>> # Verificando se todos são alfanumericos:
 >>> text = "Python123"
 >>> text.isalnum()
