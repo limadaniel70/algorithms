@@ -1,9 +1,25 @@
 # METODOS DE STRINGS EM PYTHON
 
-Essas funções ajudam na modificação de textos de forma simplificada.
+Esses métodos ajudam na modificação de textos de forma simplificada.
+
+## Como utilizar
+
+Para utilizar estas funções bastaseguir este exemplo:
+
+```python
+# Todos esses métodos seguem este padrão:
+# string.[método]()
+# Exemplos:
+# Usando uma variável
+name = "Daniel"
+name.lower()
+# Usando um texto
+"Daniel".lower()
+# Ambos retornam o mesmo valor: 'daniel'
+```
 
 > [!NOTE]
-> Todas essas funções retornam um novo valor, não alterando a string original.
+> Todas essas métodos retornam um novo valor, não alterando a string original.
 > Exemplo, se quisessemos colocar o texto de uma string para letras minúsculas seria necessário fazer isto:
 >
 >```python
@@ -14,7 +30,7 @@ Essas funções ajudam na modificação de textos de forma simplificada.
 
 ## capitalize
 
-Coloca a primeira letra maiuscula:
+Transforma a primeira letra em maiuscula:
 
 ```python
 >>> text = "ola mundo"
@@ -70,7 +86,7 @@ Conta vezes um valor (pode ser uma palavra ou letra) apareceu em uma string:
 
 ## endswith, startswith
 
-Essas funções verificam se uma string termina ou começa com determinado valor, respectivamente:
+Esses métodos verificam se uma string termina ou começa com determinado valor, respectivamente:
 
 ```python
 >>> # endswith
@@ -96,6 +112,12 @@ Define o valor das tabulaçoes (`\t`) dentro de uma string:
 >>> text = "Nome\tIdade\tCidade"
 >>> text.expandtabs(4)
 'Nome    Idade   Cidade'
+>>> text.expandtabs(2)
+'Nome  Idade Cidade'
+>>> text.expandtabs(1)
+'Nome Idade Cidade'
+>>> text.expandtabs(0)
+'NomeIdadeCidade'
 ```
 
 ## find
@@ -119,7 +141,6 @@ Formata uma string inserindo valores em `placeholders` (marcadores de posição)
 
 ```python
 >>> # Sintaxe: string.format(valor1, valor2, ..., valorn)
->>> #
 >>> # Passando o nome da posição:
 >>> "Meu nome é {nome}, eu tenho {idade} anos".format(nome = "Daniel", idade = 20)
 'Meu nome é Daniel, eu tenho 20 anos'
@@ -133,7 +154,7 @@ Formata uma string inserindo valores em `placeholders` (marcadores de posição)
 
 ## isalnum, isalpha e isdigit
 
-Cada uma dessas funções verifica se todos os caracteres da string são alfanuméricos (letras e números), se todos os caracteres da string são letras e se todos os caracteres da string são dígitos, respectivamente:
+Cada um desses métodos verifica se todos os caracteres da string são alfanuméricos (letras e números), se todos os caracteres da string são letras e se todos os caracteres da string são dígitos, respectivamente:
 
 ```python
 Copiar código
@@ -194,3 +215,44 @@ Substitui um valor especificado por outro em uma string:
 >>> "one one was a race horse, two two was one too.".replace("one", "three")
 'three three was a race horse, two two was three too.'
 ```
+
+## split e rsplit
+
+Divide a string em uma lista a partir de um separador específicado:
+
+```python
+>>> # Sintaxe: string.split(separador, num_max_de_items) 
+>>> text = "Olá, meu nome é Rodrigo, tenho 30 anos e curso redes de computadores"
+>>> text.split()
+['Olá,', 'meu', 'nome', 'é', 'Rodrigo,', 'tenho', '30', 'anos', 'e', 'curso', 'redes', 'de', 'computadores']
+>>> # Passando o separador
+>>> text.split(', ')
+['Olá', 'meu nome é Rodrigo', 'tenho 30 anos e curso redes de computadores']
+>>> # Passando o número max de itens
+>>> text.split(' ', 3)
+['Olá,', 'meu', 'nome', 'é Rodrigo, tenho 30 anos e curso redes de computadores']
+```
+
+> [!NOTE]
+> Perceba que a lista possuirá uma quantidade uma unidade maior que a variável `num_max_de_items`
+>
+> ```python
+> >>> len(text.split(' ', 3))
+> 4
+> ```
+
+Usando um dos exepmlos anteriores:
+
+```python
+>>> nomes = 'Daniel#Samuel#Henrique#Hugo'.split('#')
+['Daniel', 'Samuel', 'Henrique', 'Hugo']
+>>> nomes = ', '.join(nomes)
+'Daniel, Samuel, Henrique, Hugo'
+```
+
+> [!TIP]
+> Além do método split existe o método rsplit, a diferença entre eles é que o método split lê da esquerda para a direita, já o método rsplit lê da direita para a esquerda.
+
+## stripe, rstripe e lstripe
+
+## zfill
