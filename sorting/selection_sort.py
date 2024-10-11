@@ -22,7 +22,7 @@ def sort_by_max(arr) -> list[int]:
     sorted_arr = []
     # while arr significa: enquanto tiver itens
     # pode ser substituido por `for i in range(len(arr))`
-    # ou `while len(ar`) > 0`
+    # ou `while len(arr) > 0`
     while arr:
         max_value = find_max(arr)
         sorted_arr.append(arr.pop(max_value))
