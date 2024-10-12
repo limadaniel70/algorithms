@@ -1,9 +1,7 @@
 def binary_search(iterable: list | tuple | dict, item) -> int | None:
-    start = 0
-    end = len(iterable) - 1
-
+    start, end = 0, len(iterable) - 1
     while start <= end:
-        mid = int((start + end) / 2)
+        mid = (start + end) // 2
         guess = iterable[mid]
         if guess == item:
             return mid
@@ -13,7 +11,6 @@ def binary_search(iterable: list | tuple | dict, item) -> int | None:
         # Chute menor que o valor do item
         else:
             start = mid + 1
-
     return None
 
 
