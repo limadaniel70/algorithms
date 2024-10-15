@@ -8,7 +8,7 @@ def factorial(n: int) -> int:
     # equivalente a
     # if n == 1 or n == 0
     if n in [0, 1]:
-        return n
+        return 1
     return n * factorial(n - 1)
 
 print(factorial(5))
