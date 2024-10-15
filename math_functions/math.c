@@ -1,8 +1,7 @@
 // Fibonnaci sequence
 int ifibo(int n)
 {
-    int a, aux = 0;
-    int b = 1;
+    int a = 0, aux = 0, b = 1;
     for (int i = 0; i < n; i++)
     {
         aux = a;
@@ -123,7 +122,7 @@ int iget_min(int *arr, int size)
     return ref;
 }
 
-int rget_max(int *arr, int size)
+int rget_min(int *arr, int size)
 {
     if (size == 0)
     {
